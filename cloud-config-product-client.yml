@@ -1,0 +1,80 @@
+spring:
+  profiles:
+    active:
+      - dev
+---
+server:
+ port: 8080
+ mybatis:
+  mapper-locations: # 所有的mapper映射文件
+    - classpath:mapper/*.xml
+spring:
+  profiles: dev
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource # 配置当前要使用的数据源的操作类型
+    driver-class-name: com.mysql.jdbc.Driver # 配置当前要使用的数据源的操作类型
+    url: jdbc:mysql://localhost:3306/springcloud3?characterEncoding=UTF-8
+    username: root
+    password: xh1590123
+  application:
+    name: cloud-config-product-client
+logging:
+  level:
+    com.haoge.cloudproviderproduct.mapper: debug
+eureka:
+  client:
+    service-url:
+      defaultZone: http://admin:admin@eureka1:7001/eureka
+  instance:
+    instance-id: cloud-config-product-client
+    prefer-ip-address: true
+    lease-renewal-interval-in-seconds: 30    # 超出5s后，认为服务不可用
+    lease-expiration-duration-in-seconds: 10 # 设置心跳的间隔时间
+info:
+  app.name: cloud-provider-product
+  company.name: xuhao
+  build.artifactId: $project.artifactId$
+  build.modelVersion: $project.modelVersion$
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+---
+server:
+ port: 8081
+ mybatis:
+  mapper-locations: # 所有的mapper映射文件
+    - classpath:mapper/*.xml
+spring:
+  profiles: beta
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource # 配置当前要使用的数据源的操作类型
+    driver-class-name: com.mysql.jdbc.Driver # 配置当前要使用的数据源的操作类型
+    url: jdbc:mysql://localhost:3306/springcloud3?characterEncoding=UTF-8
+    username: root
+    password: xh1590123
+  application:
+    name: cloud-config-product-client
+logging:
+  level:
+    com.haoge.cloudproviderproduct.mapper: debug
+eureka:
+  client:
+    service-url:
+      defaultZone: http://admin:admin@eureka1:7002/eureka
+  instance:
+    instance-id: cloud-config-product-client
+    prefer-ip-address: true
+    lease-renewal-interval-in-seconds: 30    # 超出5s后，认为服务不可用
+    lease-expiration-duration-in-seconds: 10 # 设置心跳的间隔时间
+info:
+  app.name: cloud-provider-product
+  company.name: xuhao
+  build.artifactId: $project.artifactId$
+  build.modelVersion: $project.modelVersion$
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
