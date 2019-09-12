@@ -12,7 +12,7 @@ spring:
     name: config-test-client2
 info:
   app.name: cloud-config-client-dev
-  company.name: xuhao
+  company.name: xuhao111
 eureka:
   client:
     service-url:
