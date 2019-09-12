@@ -9,8 +9,10 @@ server:
 spring:
   profiles: dev
   application:
-    name: config-test-client
-
+    name: config-test-client2
+info:
+  app.name: cloud-config-client-beta
+  company.name: xuhao
 eureka:
   client:
     service-url:
@@ -28,3 +30,8 @@ eureka:
   client:
     service-url:
       defaultZone: http://admin:admin@localhost:7001/eureka
+      
+info:
+  app.name: cloud-config-client-beta
+  company.name: xuhao
+
