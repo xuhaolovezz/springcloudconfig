@@ -22,7 +22,7 @@ server:
 spring:
   profiles: beta
   application:
-    name: config-test-client
+    name: config-test-client2
 
 eureka:
   client:
