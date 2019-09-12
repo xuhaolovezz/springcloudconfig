@@ -4,15 +4,15 @@ spring:
       - beta
 ---
 server:
-  port: 8200
+  port: 8201
 
 spring:
   profiles: dev
   application:
-    name: config-test-client2
+    name: config-bus-client
 info:
   app.name: cloud-config-client-dev
-  company.name: xuhao111
+  company.name: xuhao
 eureka:
   client:
     service-url:
