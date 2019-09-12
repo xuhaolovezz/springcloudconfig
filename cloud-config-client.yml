@@ -11,7 +11,7 @@ spring:
   application:
     name: config-test-client2
 info:
-  app.name: cloud-config-client-beta
+  app.name: cloud-config-client-dev
   company.name: xuhao
 eureka:
   client:
