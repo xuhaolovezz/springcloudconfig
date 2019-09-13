@@ -12,7 +12,7 @@ spring:
     name: config-bus-client
 info:
   app.name: cloud-config-client-dev
-  company.name: xuhao1
+  company.name: xuhao
 eureka:
   client:
     service-url:
